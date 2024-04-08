@@ -1,17 +1,12 @@
 {
-  "builds": [
-    {
-      "src": "vercel_app/wsgi.py",
-      "use": "@vercel/python"
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/vercel_app/wsgi.py" }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "vercel_app/wsgi.py"
+      "src": "/404",
+      "status": 404,
+      "dest": "/vercel_app/404.html"
     }
-  ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "example/404.html" }
   ]
 }

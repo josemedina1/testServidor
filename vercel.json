@@ -10,5 +10,8 @@
       "src": "/(.*)",
       "dest": "vercel_app/wsgi.py"
     }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "example/404.html" }
   ]
 }
